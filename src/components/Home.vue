@@ -1,16 +1,20 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="homePage">
+    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'HomePage',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods: {
+    callback(key) {
+      console.log(key);
+    },
   }
 }
 </script>
