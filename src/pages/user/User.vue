@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <h1>个人用户登录</h1>
-    <login-form></login-form>
-    <router-view></router-view>
+  <div class="userWrap">
+    <router-view/>
   </div>
 </template>
 
@@ -18,6 +16,21 @@ export default {
 }
 </script>
 
-<style scope>
-  
+<style lang="less" scope>
+  .userWrap{
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    .other-type{
+      display: flex;
+      justify-content: space-between;
+    }
+    .change-login{
+      margin-top: 12px;
+      text-align: right;
+      a:last-child{
+        margin-left: 30px;
+      }
+    }
+  }
 </style>

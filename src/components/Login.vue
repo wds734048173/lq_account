@@ -7,13 +7,24 @@
     >
       <a-tabs defaultActiveKey="1" @change="callback">
         <a-tab-pane tab="密码登录" key="1">
-          <a-form-item>
+          <a-form-item v-if="usertype==0">
+            <a-input
+              v-decorator="[
+                'userphone',
+                { rules: [{ required: true, message: 'Please input your username!' }] },
+              ]"
+              placeholder="请输入手机号/邮箱/用户名"
+            >
+              <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
+            </a-input>
+          </a-form-item>
+          <a-form-item v-else>
             <a-input
               v-decorator="[
                 'userName',
                 { rules: [{ required: true, message: 'Please input your username!' }] },
               ]"
-              placeholder="Username"
+              placeholder="请输入手机号/邮箱"
             >
               <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
             </a-input>
@@ -25,7 +36,7 @@
                 { rules: [{ required: true, message: 'Please input your Password!' }] },
               ]"
               type="password"
-              placeholder="Password"
+              placeholder="请输入密码"
             >
               <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
             </a-input>
@@ -42,7 +53,7 @@
                 'userPhone',
                 { rules: [{ required: true, message: 'Please input your userPhone!' }] },
               ]"
-              placeholder="userPhone"
+              placeholder="请输入手机号"
             >
               <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
             </a-input>
@@ -54,7 +65,7 @@
                 { rules: [{ required: true, message: 'Please input your code!' }] },
               ]"
               type="text"
-              placeholder="code"
+              placeholder="请输入验证码"
             >
               <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
             </a-input>
@@ -76,6 +87,9 @@ export default {
     return{
 
     }
+  },
+  props:{
+    usertype:{type:Number,required:true}
   },
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: 'normal_login' });

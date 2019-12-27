@@ -3,7 +3,7 @@ const routes = [
     path: '/', 
     name: 'Home', 
     component: resolve => require(['@/components/Home.vue'], resolve),
-    redirect:'/user',
+    redirect:'/user/login',
     children:[
       {
         path: '/user',
@@ -24,6 +24,7 @@ const routes = [
         path: '/enterprise',
         name: 'Enterprise',
         component: resolve => require(['@/pages/enterprise/Enterprise.vue'], resolve),
+        redirect:'/enterprise/login',
         children: [
           {
             path: 'login',
@@ -39,6 +40,7 @@ const routes = [
         path: '/school',
         name: 'School',
         component: resolve => require(['@/pages/school/School.vue'], resolve),
+        redirect:'/school/login',
         children: [
           {
             path: 'login',
