@@ -65,7 +65,7 @@
       <a-form-item>
         <a-input
           v-decorator="[
-            'userPhone',
+            'loginname',
             { rules: [{ required: true, message: 'Please input your userPhone!' }] },
           ]"
           placeholder="请输入手机号"
@@ -76,7 +76,7 @@
       <a-form-item>
         <a-input
           v-decorator="[
-            'code',
+            'inputcode',
             { rules: [{ required: true, message: 'Please input your code!' }] },
           ]"
           type="text"
@@ -88,7 +88,7 @@
       <a-form-item>
         <a-input
           v-decorator="[
-            'password',
+            'userpass',
             { rules: [{ required: true, message: 'Please input your Password!' }] },
           ]"
           type="password"
@@ -114,17 +114,19 @@ export default {
     }
   },
   props:{
-    usertype:{type:Number,required:true}
+    usertype:{type:Number,required:true},
   },
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: 'normal_login' });
   },
   methods: {
     handleSubmit(e) {
+      var _this = this;
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
+          _this.$emit('reg',values)
         }
       });
     }

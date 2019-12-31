@@ -1,17 +1,17 @@
 <template>
   <div class="login-wrap">
-    <a-form
-      :form="form"
-      class="login-form"
-      @submit="handleSubmit"
-    >
-      <a-tabs defaultActiveKey="1" @change="callback">
-        <a-tab-pane tab="密码登录" key="1">
+    <a-tabs defaultActiveKey="1">
+      <a-tab-pane tab="密码登录" key="1">
+        <a-form
+          :form="form"
+          class="login-form"
+          @submit="passSubmit"
+        >
           <a-form-item v-if="usertype==0">
             <a-input
               v-decorator="[
-                'userphone',
-                { rules: [{ required: true, message: 'Please input your username!' }] },
+                'loginname',
+                { rules: [{ required: true, message: '请输入手机号/邮箱/用户名' }] },
               ]"
               placeholder="请输入手机号/邮箱/用户名"
             >
@@ -21,7 +21,7 @@
           <a-form-item v-else>
             <a-input
               v-decorator="[
-                'userName',
+                'loginname',
                 { rules: [{ required: true, message: 'Please input your username!' }] },
               ]"
               placeholder="请输入手机号/邮箱"
@@ -32,7 +32,7 @@
           <a-form-item>
             <a-input
               v-decorator="[
-                'password',
+                'userpass',
                 { rules: [{ required: true, message: 'Please input your Password!' }] },
               ]"
               type="password"
@@ -42,15 +42,23 @@
             </a-input>
           </a-form-item>
           <a-form-item>
-            <a-checkbox v-decorator="['remember',{valuePropName: 'checked',initialValue: true}]"> 记住密码 </a-checkbox>
+            <a-checkbox > 记住密码 </a-checkbox>
             <a class="login-form-forgot" href=""> 忘记密码 </a>
           </a-form-item>
-        </a-tab-pane>
-        <a-tab-pane tab="短信登录" key="2" forceRender>
+          <a-form-item>
+            <a-button type="primary" html-type="submit" class="login-form-button"> 密码登录 </a-button>
+          </a-form-item>
+        </a-form>
+      </a-tab-pane>
+      <a-tab-pane tab="短信登录" key="2" forceRender>
+        <!-- <a-form
+          :form="form"
+          class="login-form"
+        >
           <a-form-item>
             <a-input
               v-decorator="[
-                'userPhone',
+                'loginphone',
                 { rules: [{ required: true, message: 'Please input your userPhone!' }] },
               ]"
               placeholder="请输入手机号"
@@ -61,7 +69,7 @@
           <a-form-item>
             <a-input
               v-decorator="[
-                'code',
+                'logincode',
                 { rules: [{ required: true, message: 'Please input your code!' }] },
               ]"
               type="text"
@@ -70,13 +78,12 @@
               <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
             </a-input>
           </a-form-item>
-          
-        </a-tab-pane>
-      </a-tabs>
-      <a-form-item>
-        <a-button type="primary" html-type="submit" class="login-form-button"> 登录 </a-button>
-      </a-form-item>
-    </a-form>
+          <a-form-item>
+            <a-button type="primary" html-type="submit" class="login-form-button"> 短信登录 </a-button>
+          </a-form-item>
+        </a-form> -->
+      </a-tab-pane>
+    </a-tabs>
   </div>
 </template>
 
@@ -92,20 +99,19 @@ export default {
     usertype:{type:Number,required:true}
   },
   beforeCreate() {
-    this.form = this.$form.createForm(this, { name: 'normal_login' });
+    this.form = this.$form.createForm(this, { name: 'pass_login' });
   },
   methods: {
-    callback(key) {
-      console.log(key);
-    },
-    handleSubmit(e) {
+    passSubmit(e) {
+      let _this = this;
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log('Received values of form: ', values);
+          console.log('Received values of passform: ', values);
+          _this.$emit('log',values)
         }
       });
-    }
+    },
   }
 }
 </script>
