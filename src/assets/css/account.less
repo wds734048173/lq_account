@@ -1,0 +1,49 @@
+//公用样式
+.homePage{
+  .outer{
+    width: 800px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    .left{
+      flex: 1;
+    }
+    .right{
+      flex: 1;
+      .other-type{
+        display: flex;
+        justify-content: space-between;
+      }
+      .change-login{
+        margin-top: 12px;
+        text-align: right;
+        a:last-child{
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+}
+
+//用户模块
+.userWrap{
+  .left{
+    background: lightgoldenrodyellow;
+  }
+}
+
+//院校模块
+.schoolWrap{
+  .left{
+    background: lightblue;
+  }
+}
+
+//企业模块
+.enterpriseWrap{
+  .left{
+    background: lightgray;
+  }
+}

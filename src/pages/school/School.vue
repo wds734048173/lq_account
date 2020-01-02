@@ -1,6 +1,9 @@
 <template>
-  <div class="userWrap">
-    <router-view/>
+  <div class="outer schoolWrap">
+    <div class="left">院校端</div>
+    <div class="right">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -15,20 +18,6 @@ export default {
 </script>
 
 <style lang="less" scope>
-  .userWrap{
-    width: 300px;
-    text-align: center;
-    margin: 0 auto;
-    .other-type{
-      display: flex;
-      justify-content: space-between;
-    }
-    .change-login{
-      margin-top: 12px;
-      text-align: right;
-      a:last-child{
-        margin-left: 30px;
-      }
-    }
-  }
+@import url('~@/assets/css/account.less');
+
 </style>

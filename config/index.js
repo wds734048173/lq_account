@@ -9,13 +9,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    	'/api': {  //代理地址
-        target: 'http://bug.lanqiao.cn:8808/', // 通过本地服务器将你的请求转发到这个地址
-	    	changeOrigin: true, // 允许跨域 
-	    	pathRewrite: { 
-	    		'^/api': '/' 
-	    	} 
-      },
+    	// '/api': {  //代理地址
+      //   target: 'http://bug.lanqiao.cn:8808/', // 通过本地服务器将你的请求转发到这个地址
+      //   // secure: false,  // 如果是https接口，需要配置这个参数
+	    // 	changeOrigin: true, // 允许跨域 
+	    // 	pathRewrite: { 
+	    // 		'^/api': '' 
+	    // 	} 
+      // },
     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

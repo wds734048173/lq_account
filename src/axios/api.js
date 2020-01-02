@@ -1,13 +1,12 @@
-// import { fetch } from "./fetch"; //引用fetch.js
-import fetch from "./http"; //引用fetch.js
+import { fetch } from "./fetch"; //引用fetch.js
+// import fetch from "./http"; //引用fetch.js
 import api from './url'; //引用url.js
-
 
 //注册
 export function register(data){
   return fetch({
     url: api.register,
-    method: "post",
+    method: 'post',
     data: data
   })
 }
@@ -19,7 +18,7 @@ export function register(data){
 export function login(data){
   return fetch({
     url: api.login,
-    method: "post",
+    method: 'post',
     data: data
   })
 }
@@ -28,7 +27,7 @@ export function login(data){
 export function getUcenterInfo(){
   return fetch({
     url: api.ucenter,
-    method: "get",
+    method: 'get',
     params: {}
   })
 }

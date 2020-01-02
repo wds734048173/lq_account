@@ -31,15 +31,13 @@ export default {
         console.log(res.data)
         let data = res.data;
         if(data.code == 200){
-          alert('注册成功')
-          // _this.$message.success('注册成功')
+          _this.$message.success('注册成功')
           this.$router.push('/user/login');
-        }else if(data.code == 201){
-          alert(data.msg)
-          // _this.$message.err(data.msg)
+        }else {
+          _this.$message.err(data.msg)
         }
       }).catch(err => {
-        // _this.$message.err(err)
+        _this.$message.err(err)
       })
     }
   }

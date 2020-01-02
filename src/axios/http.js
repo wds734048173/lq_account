@@ -1,10 +1,9 @@
 import axios from 'axios';//引入axios
 import Message from 'ant-design-vue'
-let root = process.env.BASE_API;
 
 // 创建axios实例
 const instance = axios.create({
-  baseURL: root,
+  baseURL: process.env.BASE_API,
   timeout: 1000 * 12,
   withCredentials: true,
   headers: {  //设置post请求头
