@@ -1,8 +1,12 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 // import { Button,Form } from 'ant-design-vue';
 import App from './App'
 import router from './router/index'
 import axios from 'axios'
+import './assets/css/base.css'
+
+Vue.use(Vuex);
 
 // 全局引入 antd
 import Antd from 'ant-design-vue'

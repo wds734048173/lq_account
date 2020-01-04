@@ -1,6 +1,13 @@
 <template>
   <div class="outer enterpriseWrap">
-    <div class="left">企业端</div>
+    <div class="left">
+      <img class="logo" src="~@/assets/img/lq-logo.png" alt="蓝桥">
+      <div class="content">
+        <img src="~@/assets/img/user-pic.png" alt="">
+        <p class="t">大学生成长平台</p>
+        <p class="text">大学生进入TMT行业的职业<br/>经纪人</p>
+      </div>
+    </div>
     <div class="right">
       <router-view/>
     </div>

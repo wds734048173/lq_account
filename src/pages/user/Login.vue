@@ -1,14 +1,19 @@
 <template>
-  <div>
-    <h1>个人用户登录</h1>
+  <div class="bottom-login">
+    <h1 class="title">个人用户登录</h1>
     <login-form :usertype=0 @log="log"></login-form>
-    <div class="other-type">
-      <a class="wx-lgoin" href=""> 微信登录 </a>
-      <router-link to="register" class="register-btn" href=""> 立即注册 </router-link>
+    <div class="wx">
+      <img src="../../assets/img/wx.png" alt=""><a class="wx-lgoin" href=""> 微信登录 </a>
     </div>
-    <div class="change-login">
-      <router-link to="/school/login"> 院校用户登录 </router-link>
-      <router-link to="/enterprise/login"> 企业用户登录 </router-link>
+    <div class="other-type">
+      <p>
+        <span>还没有账号? </span><router-link to="register" class="register-btn" href=""> 立即注册 </router-link>
+      </p>
+      <p>
+        <router-link to="/school/login"> 院校登录 </router-link>
+        <span class="line">|</span>
+        <router-link to="/enterprise/login"> 企业登录 </router-link>
+      </p>
     </div>
   </div>
 </template>
@@ -22,6 +27,7 @@ export default {
   components:{LoginForm},
   methods:{
     log(postData){
+      console.log(postData)
       var _this = this;
       postData.usertype = 0;
       let data = Qs.stringify(postData)
@@ -41,6 +47,18 @@ export default {
 }
 </script>
 
-<style scope>
-  
+<style lang="less" scope>
+  .wx{
+    text-align: center;
+    img{
+      height: 32px;
+      width: 32px;
+    }
+    .wx-lgoin{
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(102,102,102,1);
+      line-height: 20px;
+    }
+  }
 </style>

@@ -1,26 +1,215 @@
 //公用样式
 .homePage{
+  p{
+    margin-bottom: 0;
+  }
   .outer{
-    width: 800px;
+    width: 886px;
     display: flex;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     .left{
-      flex: 1;
+      position: relative;
+      width: 406px;
+      height:618px;
+      background:rgba(62,130,255,1);
+      color: #fff;
+      border-radius:6px 0px 0px 6px;
+      .logo{
+        position: absolute;
+        top: 17px;
+        left: 23px;
+        width: 112px;
+      }
+      .content{
+        text-align: center;
+        margin-top: 187px;
+        img{
+          width: 128px;
+          height: 128px;
+        }
+        .t{
+          font-size:16px;
+          font-weight:500;
+          line-height:22px;
+        }
+        .text{
+          font-size:14px;
+          font-weight:400;
+          line-height:22px;
+          opacity: .7;
+          margin-top: 12px;
+        }
+      }
     }
     .right{
-      flex: 1;
-      .other-type{
-        display: flex;
-        justify-content: space-between;
+      width:480px;
+      height:618px;
+      background:rgba(255,255,255,1);
+      border-radius:0px 6px 6px 0px;
+      padding: 12px 14px 38px 45px;
+      .title{
+        font-size:18px;
+        font-family:PingFangSC-Medium,PingFang SC;
+        font-weight:500;
+        color:rgba(62,130,255,1);
+        line-height:25px;
+        margin-bottom: 94px;
       }
-      .change-login{
-        margin-top: 12px;
-        text-align: right;
-        a:last-child{
-          margin-left: 30px;
+      .login-wrap{
+        width: 250px;
+        margin-left: 86px;
+        .ant-tabs-bar{
+          border-bottom: none;
+          margin-bottom: 60px;
+          .ant-tabs-tab{
+            font-size:16px;
+            font-family:PingFangSC-Medium,PingFang SC;
+            font-weight:500;
+            color:#94A9CF;
+            line-height:22px;
+            padding: 0;
+            margin-right: 23px;
+            &.ant-tabs-tab-active{
+              color:rgba(62,130,255,1);
+            }
+          }
+          .ant-tabs-ink-bar,.ant-tabs-ink-bar-animated{
+            display: none!important;
+          }
+        }
+        .ant-form{
+          .ant-form-item{
+            position: relative;
+            &:first-child{
+              margin-bottom: 40px;
+            }
+            .ant-input{
+              font-size:16px;
+              font-family:PingFangSC-Medium,PingFang SC;
+              font-weight:500;
+              color:rgba(35,35,35,1);
+              line-height: 22px;;
+              border: none;
+              box-shadow:none;
+              border-bottom: 1px solid #92A7CE;
+              border-radius: 0;
+              padding-left: 0;
+              &:focus{
+                outline: none;
+                border: none;
+                box-shadow:none;
+                border-bottom: 1px solid #3E82FF;
+                border-radius: 0;
+              }
+            }
+            .tips{
+              z-index: 1;
+              position: absolute;
+              left: 0;
+              top: -15px;
+              color: #254F9D;
+              font-size: 14px;
+              opacity: .5;
+            }
+            .eye{
+              position: absolute;
+              z-index: 1;
+              right: 0;
+              img{
+                width: 22px;
+                height: 22px;
+              }
+            }
+            .send-code{
+              z-index: 1;
+              position: absolute;
+              right: 0;
+              bottom: 4px;
+              font-size: 14px;
+              font-weight: 400;
+              color: rgba(62,130,255,1);
+              line-height: 20px;
+              border: none;
+              background: none;
+              outline: none;
+              cursor: pointer;
+              &.disabled{
+                cursor: default;
+                color: #B5B5B5;
+              }
+            }
+            .has-error{
+              .ant-input:hover{
+                box-shadow:none;
+              }
+              .ant-form-split {
+                font-size: 12px;
+                font-weight: 400;
+                color: rgba(252,101,44,1);
+                line-height: 17px;
+              }
+            }
+            .remeber-pass{
+              font-size:14px;
+              font-weight:500;
+              color:rgba(37,79,157,1);
+              line-height:20px;
+              opacity: .5;
+              .ant-checkbox-inner{
+                border-radius:2px;
+                border:1px solid rgba(146,167,206,1);
+              }
+            }
+            .login-form-forgot{
+              float: right;
+              font-size:14px;
+              font-weight:500;
+              color:rgba(62,130,255,1);
+              line-height:20px;
+            }
+            &.pass-form{
+              .ant-form-item-control{
+                line-height: 20px;
+              }
+            }
+            .login-form-button{
+              width: 100%;
+              background: rgba(62,130,255,1);
+              height: 36px;
+              line-height: 36px;
+              font-size: 14px;
+              font-weight: 500;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+      .bottom-login{
+        position: relative;
+        height: 100%;
+        .other-type{
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          p{
+            a{
+              font-size:14px;
+              font-weight:500;
+              color:rgba(62,130,255,1);
+              line-height:20px;
+            }
+            .line{
+              font-size:14px;
+              color:rgba(62,130,255,1);
+              line-height:20px;
+              margin: 0 8px;
+            }
+          }
         }
       }
     }
@@ -30,20 +219,20 @@
 //用户模块
 .userWrap{
   .left{
-    background: lightgoldenrodyellow;
+    // background: lightgoldenrodyellow;
   }
 }
 
 //院校模块
 .schoolWrap{
   .left{
-    background: lightblue;
+    // background: lightblue;
   }
 }
 
 //企业模块
 .enterpriseWrap{
   .left{
-    background: lightgray;
+    // background: lightgray;
   }
 }
