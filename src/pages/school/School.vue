@@ -1,6 +1,6 @@
 <template>
   <div class="outer schoolWrap">
-    <div class="left">
+    <div class="session-sidebox">
       <img class="logo" src="~@/assets/img/lq-logo.png" alt="蓝桥">
       <div class="content">
         <img src="~@/assets/img/user-pic.png" alt="">
@@ -8,7 +8,7 @@
         <p class="text">大学生进入TMT行业的职业<br/>经纪人</p>
       </div>
     </div>
-    <div class="right">
+    <div class="session-form">
       <router-view/>
     </div>
   </div>
