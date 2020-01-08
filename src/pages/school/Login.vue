@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-login">
-    <h1 class="title">院校登录</h1>
+    <h1 class="title log-t">院校登录</h1>
     <login-form :usertype=2 @log="log"></login-form>
     <div class="other-type">
       <p>

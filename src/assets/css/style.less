@@ -1,0 +1,191 @@
+.ant-form{
+  .ant-form-item{
+    position: relative;
+    .ant-input{
+      font-size:16px;
+      font-family:PingFangSC-Medium,PingFang SC;
+      font-weight:500;
+      color:rgba(35,35,35,1);
+      line-height: 22px;;
+      border: none;
+      box-shadow:none;
+      border-bottom: 1px solid #92A7CE;
+      border-radius: 0;
+      padding-left: 0;
+      &:focus{
+        outline: none;
+        border: none;
+        box-shadow:none;
+        border-bottom: 1px solid #3E82FF;
+        border-radius: 0;
+      }
+    }
+    .tips{
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: -15px;
+      color: #254F9D;
+      font-size: 14px;
+      opacity: .5;
+    }
+    .tip-error{
+      text-align: left;
+      display: none;
+      font-size:12px;
+      color:rgba(252,101,44,1);
+      line-height:17px;
+      img{
+        width: 14px;
+        height: 14px;
+        margin-right: 4px;
+        margin-bottom: 2px;
+      }
+    }
+    .eye{
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      img{
+        width: 22px;
+        height: 22px;
+      }
+    }
+    .send-code{
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(62,130,255,1);
+      line-height: 20px;
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      &.disabled{
+        cursor: default;
+        color: #B5B5B5;
+      }
+    }
+    .has-error{
+      .ant-input:hover{
+        box-shadow:none;
+      }
+      .ant-form-split {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(252,101,44,1);
+        line-height: 17px;
+      }
+    }
+  }
+}
+.common-wrap{
+  width: 540px;
+  margin: 0 auto;
+  padding-top: 114px;
+  border-radius:6px;
+  .content{
+    text-align: center;
+    background: #fff;
+    padding-bottom: 60px;
+    .com-form{
+      width: 270px;
+      padding-top: 93px;
+      margin: 0 auto;
+      .ant-form-item{
+        margin-bottom: 44px;
+        &:last-child{
+          margin-bottom: 16px;
+        }
+        .ant-input{
+          border-bottom-color: #B7B7B7;
+          &:focus{
+            border-bottom-color: #3E82FF;
+          }
+        }
+      }
+      .ok-btn{
+        width: 100%;
+        height: 34px;
+        line-height: 34px;
+        background: rgba(62,130,255,1);
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(255,255,255,1);
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+.gotoLogin{
+  position: absolute;
+  right: 31px;
+  top: 22px;
+  font-size:14px;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  line-height:20px;
+  cursor: pointer;
+  .anticon-right{
+    margin-left: 5px;
+  }
+}
+//修改模态框
+.editModal{
+  .ant-modal-close{
+      .ant-modal-close-x{
+          height: 45px;
+          line-height: 45px;
+          color: #6d6666;
+          font-size: 15px;
+      }
+  }
+  .ant-modal-header{
+      height: 45px;
+      padding: 12px 0 12px 22px;
+      border-radius:2px 2px 0px 0px;
+      border-bottom: none;
+      .ant-modal-title{
+          font-size:16px;
+          font-family:PingFangSC-Medium,PingFang SC;
+          font-weight:500;
+          color:rgba(0,0,0,1);
+          line-height:22px;
+      }
+  }
+  .ant-modal-body{
+    padding: 16px 32px 34px;
+    .ant-form{
+      width: 270px;
+      margin: 0 auto;
+      .ant-form-item{
+        margin-bottom: 12px;
+        .ant-input{
+          font-size: 14px;
+          border-radius: 2px;
+          border: 1px solid rgba(233,233,233,1);
+          padding: 0 8px;
+          &:focus{
+            border: 1px solid #3E82FF;
+          }
+        }
+        .send-code{
+          bottom: -3px;
+        }
+        .ok-btn{
+          width: 100%;
+        }
+      }
+      .btn-item{
+        margin-top: 24px;
+        margin-bottom: 0;
+        .ant-btn{
+          background:rgba(62,130,255,1);
+        }
+      }
+    }
+  }
+}

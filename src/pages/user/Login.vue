@@ -1,9 +1,10 @@
 <template>
   <div class="bottom-login">
-    <h1 class="title">个人用户登录</h1>
+    <h1 class="title log-t">个人用户登录</h1>
     <login-form :usertype=0 @log="log"></login-form>
     <div class="wx">
-      <img src="../../assets/img/wx.png" alt=""><a class="wx-lgoin" href=""> 微信登录 </a>
+      <img src="../../assets/img/wx.png" alt="">
+      <router-link to="/wxlogin" class="wx-lgoin"> 微信登录 </router-link>
     </div>
     <div class="other-type">
       <p>
