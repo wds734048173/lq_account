@@ -34,7 +34,7 @@ export default {
     background:rgba(13,57,138,.06);
     border-radius:6px 6px 0px 0px;
     img{
-      width: 112px;
+      width: 102px;
     }
     .line{
       font-weight:500;

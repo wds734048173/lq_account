@@ -122,7 +122,8 @@ export default {
   }
   .detail-info{
     p{
-      font-size: 15px;
+      font-size: 
+      5px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #666666;
@@ -137,7 +138,9 @@ export default {
     .item {
       height:79px;
       line-height: 79px;
+      border-bottom: 1px solid #F2F6F7;
       background:#fff;
+      padding-left: 16px;
       clear: both;
       vertical-align: middle;
       transition: all .2s ease-in-out;
