@@ -26,6 +26,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    // 使用开发环境、或者测试环境的切换。。。
     new webpack.DefinePlugin({
       'process.env': require('../config/prod.env')
     }),

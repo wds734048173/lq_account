@@ -6,6 +6,7 @@ const instance = axios.create({
   baseURL: process.env.BASE_API,
   timeout: 1000 * 12,
   withCredentials: true,
+  // changeOrigin:true,
   headers: {  //设置post请求头
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   },
@@ -77,20 +78,20 @@ instance.interceptors.request.use(
 
 // 响应拦截异常处理
 instance.interceptors.response.use(response => {
-  return response;
-},
+    return response;
+  },
 // 请求失败
-error => {
-  if (error) {
-    errorHandle(response.status, response.data);
-    return Promise.reject(error);
-  } else {
-    // 处理断网的情况
-    // eg:请求超时或断网时，更新state的network状态
-    // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
-    // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
-    /*  store.commit('changeNetwork', false); */
-  }
-});
+  error => {
+    if (error) {
+      errorHandle(response.status, response.data);
+      return Promise.reject(error);
+    } else {
+      // 处理断网的情况
+      // eg:请求超时或断网时，更新state的network状态
+      // network状态在app.vue中控制着一个全局的断网提示组件的显示隐藏
+      // 关于断网组件中的刷新重新获取数据，会在断网组件中说明
+      /*  store.commit('changeNetwork', false); */
+    }
+  });
 
 export default instance;

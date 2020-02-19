@@ -1,5 +1,5 @@
 <template>
-  <div class="outer schoolWrap">
+  <!--<div class="outer schoolWrap">
     <div class="session-sidebox">
       <img class="logo" src="~@/assets/img/lq-logo.png" alt="蓝桥">
       <div class="content">
@@ -11,7 +11,7 @@
     <div class="session-form">
       <router-view/>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <script>

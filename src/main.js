@@ -4,7 +4,11 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router/index'
 import axios from 'axios'
+import store from './vuex/store'
+import qs from 'qs'
 import './assets/css/base.css'
+
+
 
 Vue.use(Vuex);
 
@@ -20,6 +24,7 @@ Vue.prototype.$http = axios
 
 import { message } from 'ant-design-vue'
 Vue.prototype.$message = message;
+Vue.prototype.$qs = qs;
 message.config({
     duration: 2,
 });
@@ -29,6 +34,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

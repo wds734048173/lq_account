@@ -9,23 +9,23 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-    	// '/api': {  //代理地址
+      // '/api': {  //代理地址
       //   target: 'http://bug.lanqiao.cn:8808/', // 通过本地服务器将你的请求转发到这个地址
       //   // secure: false,  // 如果是https接口，需要配置这个参数
-	    // 	changeOrigin: true, // 允许跨域 
-	    // 	pathRewrite: { 
-	    // 		'^/api': '' 
-	    // 	} 
+      // 	changeOrigin: true, // 允许跨域
+      // 	pathRewrite: {
+      // 		'^/api': ''
+      // 	}
       // },
     },
     // Various Dev Server settings
     host: 'dev.lanqiao.cn', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-    
+
     /**
      * Source Maps
      */
@@ -39,9 +39,9 @@ module.exports = {
   },
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../account/index.html'),
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../account/'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     /**
@@ -49,6 +49,9 @@ module.exports = {
      */
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
+    // 打包格式（大小）
+    // config.devtool = "none"
+    // config.devtool = "#cheap-module-eval-source-map"
     devtool: '#source-map',
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.

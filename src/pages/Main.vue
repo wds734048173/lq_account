@@ -1,15 +1,14 @@
-<!--
 <template>
-  <div class="homePage">
+  <!--<div class="homePage">
     <router-view/>
-  </div>
+  </div>-->
 </template>
 
 <script>
   import {createLqtoken} from '../common/js/createLqtoken'
 
   export default {
-    name: 'HomePage',
+    name: 'Main',
     data() {
       return {}
     },
@@ -100,4 +99,3 @@
 
 <style lang="less" scoped>
 </style>
--->
